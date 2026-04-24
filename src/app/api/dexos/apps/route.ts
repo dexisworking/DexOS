@@ -1,0 +1,72 @@
+import { NextResponse } from "next/server";
+import type { DexOSApp } from "@/lib/types";
+
+export async function GET() {
+  return NextResponse.json([
+    {
+      id: "1",
+      name: "DexSec",
+      slug: "dexsec",
+      description: "Cyber Intelligence & Vulnerability Scanner",
+      icon_url: "/favicon.ico",
+      redirect_url: "https://dexsec.iamdex.codes",
+      access_status: true,
+      access_restore_date: null,
+      internal_type: "external",
+      display_order: 0,
+      created_at: new Date().toISOString(),
+    },
+    {
+      id: "2",
+      name: "DexForensics",
+      slug: "dexforensics",
+      description: "Digital Forensics & Chain of Custody Manager",
+      icon_url: "/favicon.ico",
+      redirect_url: "https://dexforensics.iamdex.codes",
+      access_status: true,
+      access_restore_date: null,
+      internal_type: "external",
+      display_order: 1,
+      created_at: new Date().toISOString(),
+    },
+    {
+      id: "3",
+      name: "DexFortify",
+      slug: "dexfortify",
+      description: "Network Edge Protection & Virtualizer",
+      icon_url: "/favicon.ico",
+      redirect_url: "https://dexfortify.iamdex.codes",
+      access_status: true,
+      access_restore_date: null,
+      internal_type: "external",
+      display_order: 2,
+      created_at: new Date().toISOString(),
+    },
+    {
+      id: "4",
+      name: "DexSentinel",
+      slug: "dexsentinel",
+      description: "Next-Gen Threat Detection & Response",
+      icon_url: "/favicon.ico",
+      redirect_url: "https://dexsentinel.iamdex.codes",
+      access_status: true,
+      access_restore_date: null,
+      internal_type: "external",
+      display_order: 3,
+      created_at: new Date().toISOString(),
+    },
+    {
+      id: "5",
+      name: "Terminal",
+      slug: "terminal",
+      description: "Root System Access",
+      icon_url: "/favicon.ico",
+      redirect_url: "#",
+      access_status: true,
+      access_restore_date: null,
+      internal_type: "terminal",
+      display_order: 4,
+      created_at: new Date().toISOString(),
+    }
+  ]);
+}

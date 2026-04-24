@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #000000;
+  --ink: #f4f2ed;
+  --red: #ef4444;
+  --red-pale: #2a1714;
+  --green: #00ff88;
+  --green-pale: #0a241a;
+  --surface: #000000;
+  --rule: #ffffff;
+  --muted: #a7a39b;
+}
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── Selection ── */
+::selection { background: var(--ink); color: var(--bg); }
+
+/* ── Cursor blink ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.cursor-blink { animation: blink 1s step-end infinite; }
+
+/* ── Utilities ── */
+@layer utilities {
+  .font-900 { font-weight: 900; }
+  .tracking-display { letter-spacing: -0.04em; }
+  .text-red { color: var(--red); }
+  .text-muted { color: var(--muted); }
+  .text-ink { color: var(--ink); }
+  .bg-surface { background: var(--surface); }
+  .bg-bg { background: var(--bg); }
+  .border-rule { border-color: var(--rule); }
+}
