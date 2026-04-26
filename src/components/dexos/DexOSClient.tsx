@@ -10,6 +10,7 @@ import LaserSweep from "./LaserSweep";
 import AppTerminalOverlay from "./AppTerminalOverlay";
 import AppsWindow from "./AppsWindow";
 import MobileStatusBar from "./MobileStatusBar";
+import DesktopStatusBar from "./DesktopStatusBar";
 
 const DexOSClient = () => {
   const { isLocked, setIsLocked, activeApp, setActiveApp, wallpaper, setIsAppsWindowOpen } = useDexOS();
@@ -71,7 +72,7 @@ const DexOSClient = () => {
       // Ctrl + K (Apps Window)
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        setIsAppsWindowOpen((prev) => !prev);
+        setIsAppsWindowOpen((prev: boolean) => !prev);
       }
 
       // Escape (Universal Close)
@@ -101,6 +102,7 @@ const DexOSClient = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black text-[#f4f2ed]">
       <MobileStatusBar />
+      <DesktopStatusBar />
       {/* Dynamic Background with Liquid Blur Transition */}
       <motion.div 
         animate={{ 
